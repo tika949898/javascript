@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<title>thisin object</title>
+</head>
+<body>
+<script>
+function emp(id,name,salary)
+{
+this.id=id;
+this.name=name;
+this.salary=salary;
+}
+var e = new emp(100,"ABC",20000);
+document.write(e.id + " " + e.name + " " + e.salary + "<br>");
+var e1 = new emp(101,"PQR",25000);
+document.write(e1.id + " " + e1.name + " " + e1.salary + "<br>");
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accessible CAPTCHA Verification</title>
+  <style>
+    /* CSS styles for the captcha verification form */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+    
+    button[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Accessible CAPTCHA Verification</h1>
+    <form onsubmit="return validateCaptcha()">
+      <label for="captcha">Solve the following math problem:</label>
+      <div id="captcha">
+        <span id="num1" aria-hidden="true"></span> + <span id="num2" aria-hidden="true"></span> = <input type="text" id="captchaInput" name="captchaInput" aria-label="Captcha input">
+        <span id="captchaText" class="sr-only"></span>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  <script>
+    // JavaScript code for generating and validating the accessible captcha
+    var num1, num2, expectedSum;
+    generateCaptcha(); // Generate the initial captcha on page load
+    
+    function generateCaptcha() {
+      num1 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
+      num2 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
+      expectedSum = num1 + num2; // Calculate expected sum
+      document.getElementById('num1').innerText = num1; // Set num1 in the captcha
+      document.getElementById('num2').innerText = num2; // Set num2 in the captcha
+      document.getElementById('captchaText').innerText = num1 + " plus " + num2 + " equals"; // Set the accessible text for screen readers
+    }
+    
+    function validateCaptcha() {
+      var captchaInput = document.getElementById('captchaInput').value;
+      if (parseInt(captchaInput) === expectedSum) {
+        alert('Captcha verification successful. You are not a robot!');
+        generateCaptcha(); // Generate a new captcha for the next verification
+        return false;
+      } else {
+        alert('Captcha verification failed. Please try again.');
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>

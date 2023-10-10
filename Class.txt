@@ -1,0 +1,21 @@
+<!doctype html>
+<html>  
+<head>  
+<title> class="colors">Colors</title>  
+</head>  
+<body>  
+<h1> JavaScript Query Selector</h1>  
+<h1 class="myClass">Class 1</h1>  
+<p class="myClass"> Myclass</p>  
+<div id="firstid">  
+<p> It is the div p paragraph</p>  
+<p class="pclass"> div p class</p>  
+</div>  
+<p id="myid"> It is p id</p>  
+<div id="divid"> It is div id</div>  
+<script>   
+var e=document.querySelector("p");  
+document.write(e);   
+ </script>  
+</body>  
+</html>  

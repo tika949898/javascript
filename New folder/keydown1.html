@@ -1,0 +1,24 @@
+ <!DOCTYPE html>
+<html>
+<head>
+ <title>Keydown Event Example</title>
+</head>
+<body>
+
+ <h2>Press any key on the keyboard</h2>
+<input type='text' id='i1' placeholder='type any text here'>
+
+ <script>
+var i = document.getElementById('i1');
+i.addEventListener('keydown', function(event) {
+   alert('You pressed the ' + event.key + ' key!');
+ });
+ </script>
+
+</body>
+</html>
+
+
+
+
+

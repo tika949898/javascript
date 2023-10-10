@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>To find the number of links in a document in JavaScript</title>
+</head>
+<body>
+   <h1>To find the number of links in a document in JavaScript</h1>
+   <a name="google" href="https://www.google.com/" title="Google Home Page">Google</a><br>
+   <a name="facebook" href="https://www.facebook.com/" title="Facebook Home Page">Facebook</a><br>
+   <a name="youtube" href="https://www.youtube.com/" title="Youtube Home Page">Youtube</a><br>
+   <p id="text1"></p>
+   <script>
+      document.getElementById("text1").innerHTML = "The total number of links in the document are : "+document.links.length;
+   </script>
+</body>
+</html>

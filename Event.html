@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>window event property</title>
+</head>
+<body style="text-align:center;">
+	<h1 style="color:green;">
+		GeeksforGeeks
+	</h1>
+	<p>
+	HTML | window event property
+	</p>
+	<button onclick = "Geeks()">
+	Click Here
+	</button>
+	<p id="a">
+	</p>	
+	<script>
+		var a = document.getElementById("a");
+		function Geeks() {
+			console.log(window.event)
+			a.innerHTML="Event type is : "+window.event.type;
+		}
+	</script>
+</body>
+</html>

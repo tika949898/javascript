@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<title>Simple Alert</title>
+</head>
+<script>
+window.addEventListener('load',function()
+{
+var button=document.getElementById('alert-trigger');
+button.addEventListener('click', addAlert);
+});
+function addAlert()
+{
+var example = document.getElementById('example');
+var template = document.getElementById('alert-template').innerHTML;
+example.innerHTML = template;
+}
+</script>
+<body>
+<button type="button" id="alert-trigger">Trigger Alert</button>
+<div id="example" role="alert"></div>
+<script id="alert-template">
+<p>Battery remaining 10%</p>
+</body>
+</html>

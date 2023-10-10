@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<title>onclick event</title>
+</head>
+<body>
+<h1>Onclick event</h1>
+<h3 id="demo" onclick="myfunction()">Click this text to change the colour</h3>
+<h3 id="demo1" ondblclick="myfunction1()">Click this text to change the colour</h3>
+<script>
+function myfunction()
+{
+document.getElementById("demo").style.color="red"; 
+}
+function myfunction1()
+{
+document.getElementById("demo1").style.color="blue"; 
+}
+</script>
+</body>
+</html>
